@@ -4,6 +4,12 @@ This repository is an example of how an SSR can be achieved in Svelte Kit using 
 
 The goal of this PoC was to create a website where users can sign in (and register), and view his profile (email and name). The main trick is that SSR needs to be working, so if the client disables JavaScript, his information (only accessible after authentication) will be displayed anyway.
 
+---
+
+The main SSR logic can be found in [src/routes/index.js](https://github.com/Meldiron/appwrite-svelte-kit-ssr/blob/master/src/routes/index.ts#L4-L41). As you can see, the trick is to take the correct cookie from Svelte Kit `request.headers`, and set it on Appwrite SDK client `appwrite.headers`. This way a request sent from the server (during SSR) proxies auth cookies properly, and gets a proper response of `account.get()`.
+
+---
+
 ## 🐌 Before implementing SSR
 
 ![No SSR, JS enabled](docs/before-js.png)

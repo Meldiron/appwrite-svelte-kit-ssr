@@ -1,9 +1,9 @@
-import { AppwriteService } from '$lib/appwrite';
+import { AppwriteService, appwrite } from '$lib/appwrite';
 import * as cookie from 'cookie';
 
-export async function get(obj: any) {
+export async function get({ request }: any) {
 	// Get cookie from request
-	const cookies = cookie.parse(obj.request.headers.get("cookie") || '');
+	const cookies = cookie.parse(request.headers.get("cookie") || '');
 	const projectId = 'svelteKitSsr';
 	const authCookie = cookies[`a_session_${projectId.toLowerCase()}_legacy`];
 
@@ -11,7 +11,7 @@ export async function get(obj: any) {
 	if (authCookie) {
 		const authCookies: any = {};
 		authCookies[`a_session_${projectId}`] = authCookie;
-		AppwriteService.initServer(JSON.stringify(authCookies));
+		appwrite.headers['X-Fallback-Cookies'] = authCookies;
 	}
 
 
