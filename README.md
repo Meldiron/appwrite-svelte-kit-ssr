@@ -1,4 +1,22 @@
-# create-svelte
+# 🛎️ Appwrite + Svelte Kit (SSR)
+
+This repository is an example of how an SSR can be achieved in Svelte Kit using Appwrite SDK.
+
+The goal of this PoC was to create a website where users can sign in (and register), and view his profile (email and name). The main trick is that SSR needs to be working, so if the client disables JavaScript, his information (only accessible after authentication) will be displayed anyway.
+
+How initial data looks without SSR:
+
+![No SSR, JS enabled](docs/before-js.png)
+
+![No SSR, JS disabled](docs/before-plain.png)
+
+And now let's enable SSR:
+
+![SSR enabled, JS enabled](docs/after-js.png)
+
+![SSR enabled, JS disabled](docs/after-plain.png)
+
+## Auto-generated readme:
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 

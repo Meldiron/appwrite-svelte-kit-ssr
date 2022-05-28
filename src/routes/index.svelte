@@ -1,2 +1,21 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Register from '$lib/comps/Register.svelte';
+	import Profile from '$lib/comps/Profile.svelte';
+	import Login from '$lib/comps/Login.svelte';
+
+	export let profile: { email: string; name: string } | null;
+</script>
+
+<h1>Register</h1>
+
+<Register />
+
+<hr />
+
+<h1>Login</h1>
+
+<Login />
+
+<h1>Account</h1>
+
+<Profile {profile} />
