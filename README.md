@@ -4,13 +4,13 @@ This repository is an example of how an SSR can be achieved in Svelte Kit using 
 
 The goal of this PoC was to create a website where users can sign in (and register), and view his profile (email and name). The main trick is that SSR needs to be working, so if the client disables JavaScript, his information (only accessible after authentication) will be displayed anyway.
 
-How initial data looks without SSR:
+## 🐌 Before implementing SSR
 
 ![No SSR, JS enabled](docs/before-js.png)
 
 ![No SSR, JS disabled](docs/before-plain.png)
 
-And now let's enable SSR:
+## ⚡ With SSR implemented
 
 ![SSR enabled, JS enabled](docs/after-js.png)
 
